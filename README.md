@@ -18,7 +18,7 @@ MOVE
 REPORT
 Output: 3,3,NORTH
 
-Code is written in Ionic2
+
 
 Please run following commands
 Clone the Repo
