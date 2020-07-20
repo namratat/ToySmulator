@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Robot Toy Simulator
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="tab5-content">
+  <ion-grid style="">
+    <ion-row *ngFor="let item of tableData; index as i" >
+      <ion-col *ngFor="let img of item; index as j"col-auto class="cell-class">
+        <div *ngIf="isValid(img)">
+        <img src="{{img}}" class="ion-img" [ngStyle]="{'transform': 'rotate('+rotate+'deg)'}"/>
+      </div>
+      </ion-col>
+      
+    </ion-row>
+  </ion-grid>
+
+  <button ion-button (click)="rotateLeftRight('LEFT')">LEFT</button>
+  <button ion-button (click)="rotateLeftRight('RIGHT')">RIGHT</button>
+  <button ion-button (click)="CommandFunction()">MOVE</button>
+  <ion-item>
+    <ion-label>Enter Input commands and click on Place (X,Y,DIRECTION)</ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-input type="text" [(ngModel)]="input" autocapitalize="characters" style="border: 1px;"></ion-input>
+  </ion-item>
+  
+  <button ion-button (click)="Place()">Place</button>
+  <button ion-button (click)="Reset()">Reset</button>
+
+  <ion-item>
+    <label> OutPut X,Y,Direction => {{X}} , {{Y}} , {{currentDirection}} </label>
+  </ion-item>
+  <!-- <div>X Axis {{X}}</div>
+  <div>Y Axis {{Y}}</div>
+  <div>Direction {{currentDirection}}</div>
+  <div>{{input}}</div> -->
+
+</ion-content>>
